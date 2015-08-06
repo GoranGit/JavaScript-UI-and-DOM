@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <div>
+        <label id="idlbl">By ID:</label><br />
+        <label id="tagNamelbl">By TagName:</label><br />
+        <label id="querySelector">By querySelector:</label><br />
+        <ul id="names">
+            <li id="goranli">Goran </li>
+            <li>Marko</li>
+            <ul>
+                <li>Test</li>
+            </ul>
+            <li>Kris</li>
+            <li id="markoli">Darko</li>
+            <li>Alek</li>
+        </ul>
+        <ul>
+            <li>Sofia</li>
+        </ul>
+        <button onclick="getName()">get name</button>
+  
+    </div>
+
+    <script>
+
+        function getName() {
+            //byId
+            var goranli = document.getElementById('goranli');
+            var lbl = document.getElementById('idlbl');
+
+            lbl.innerHTML = goranli.innerText;
+            var ul = document.getElementById('names');
+
+            //byTagName
+            var byTagName = ul.getElementsByTagName('li');
+            var lblByTagName = document.getElementById('tagNamelbl');
+            var byTagNameResult = '';
+
+            for (var i = 0; i < byTagName.length; i += 1) {
+                byTagNameResult += byTagName[i].innerText;
+            }
+
+            lblByTagName.innerHTML = byTagNameResult;
+
+            //querySelector
+
+            var byQuerySelector = document.querySelectorAll('#names>li');
+            var lblQuery = document.getElementById('querySelector');
+            var byQueryResult = '';
+            for (var i = 0; i < byQuerySelector.length; i += 1) {
+                byQueryResult += byQuerySelector[i].innerText;
+            }
+            lblQuery.innerText = byQueryResult;
+        }
+    </script>
+</body>
+</html>

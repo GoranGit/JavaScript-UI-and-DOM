@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="miDiv" class="a b c">
+    <a>neshto</a>
+<div id="alek">Aleksandra
+
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li><ul>
+
+        </ul></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <div id="wrapper" class="a">
+        <div id="inner-wrapper" class="a">
+            <ul id="items-list">
+                <li>Item 1</li>
+                <li>Item 2
+                    <ul>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+                <a href="">nesto</a>
+                <li class="special">Item 3</li>
+                <li class="neshto k">Item 4</li>
+                <li>Item 5</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+
+<div>
+    <strong>Messages: </strong>
+    <ul id="messages-list"></ul>
+</div>
+
+
+<script src="jquery-2.1.4.js"></script>
+
+<script>
+   // var div = document.getElementById('miDiv');
+   // console.log(div.nodeName);
+   // console.log(div.innerText);
+   // console.log(div.innerHTML);
+   // console.log(div.className+=' d');
+   // console.log(div.className);
+   // console.log(document.querySelector('#alek').children);
+
+$('ul').css('color','red');
+
+
+    function printMessage(text) {
+        $("#messages-list").append('<li>' + text + '</li>');
+    }
+    var $specialItem = $(".special").first();
+    printMessage("parent id: " + $specialItem.parent().attr("id"));
+    printMessage("div id: " + $specialItem.parents("div").attr("id"));
+    printMessage("#wrapper id: " + $specialItem.parents(".a ").attr("id"));
+    printMessage("#items-list children count: " + $("#items-list").children().length);
+
+    printMessage('nisto '+$('#items-list').find('li').length);
+    printMessage('test '+$("#items-list").children('li')[3]);
+    var k = $($("#items-list").children('li')[3]);
+    printMessage(' '+ k.html());
+
+</script>//
+</body>
+</html>

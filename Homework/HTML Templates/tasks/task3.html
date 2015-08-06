@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+
+<ul id="books-list" data-template="book-item-template"></ul>
+
+
+<script id="book-item-template" type="…">
+  <li class="book-item">
+    <a href="/#books/{{id}}">
+      <strong>{{title}}</strong>
+    </a>
+  </li>
+</script>
+<script src="jquery-2.1.4.js"></script>
+<script src="handlebars-v3.0.3.js"></script>
+<script src="task-3.js"></script>
+<script>
+    var func = solve();
+    func();
+    books = [
+        {id:5, title:'Secret'},
+        {id:6, title:'Success'}
+    ]
+    $('#books-list').listview(books);
+</script>
+</body>
+</html>

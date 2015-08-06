@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<ul id="people">
+    <li>peso</li>
+    <li>gosho</li>
+    <li>trajko</li>
+    <li>mirko</li>
+    <li>slavko</li>
+</ul>
+
+<script>
+    var people = document.getElementById('people');
+    var allPeople = document.querySelectorAll('li');
+
+    console.log("Query result before adding:");
+    writer(allPeople);
+    debugger;
+    people.firstElementChild.innerHTML = "GORAN";
+    people.innerHTML+="<li>TEst</li>";
+    console.log("Query result after adding:");
+    writer(allPeople);
+
+    function writer(collection){
+        for(var i= 0,l=collection.length;i<l;i+=1){
+            console.log(collection[i]);
+        }
+    }
+//console.log(Object.is(alllPeople[0],allPeople));
+</script>
+</body>
+</html>

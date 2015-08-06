@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="table"></div>
+
+<script type="text/handlebars-template" id="template">
+    <table class="items-table">
+        <thead>
+        <tr>
+            <th>#</th>
+            {{#each this.headers}}
+            <th>{{this}}</th>
+            {{/each}}
+        </tr>
+        </thead>
+        <tbody>
+        {{#each this.items}}
+        <tr>
+            <td>{{@index}}</td>
+            {{#each this}}
+            <td>{{this}}</td>
+            {{/each}}
+        </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</script>
+<script src="jquery-2.1.4.js"></script>
+<script src="handlebars-v3.0.3.js"></script>
+<script src="task-1.js"></script>
+<script>
+var func = solve();
+    func('#table');
+</script>
+</body>
+</html>
